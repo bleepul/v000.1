@@ -1,0 +1,652 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra-head %}
+
+{% endblock %}
+
+{% block breadcrumbs %}
+ <li class="breadcrumb-item active">Dashboard</li>
+{% endblock %}
+
+{% block cards %}
+
+ <div class="container-fluid">
+            <div class="fade-in">
+                <div class="cols-4">
+                  <div class="card">
+                    <div class="card-header">Click/Zoom Map of States</div>
+                      <div class="card-body">
+                        <div id="canvasX" class="c-chart-wrapper"></div>
+                      </div>
+                  </div>
+                </div>
+                <div class="cols-4">
+                  <div class="card">
+                    <div class="card-header">Bubble Map of Counties</div>
+                    <div class="card-body">
+                      <div id="canvasY" class="c-chart-wrapper"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="cols-4">
+                  <div class="card">
+                    <div class="card-header">Bubble Map of ZipCodes</div>
+
+                    <div class="card-body">
+                      <div id="canvasZ" class="c-chart-wrapper"></div>
+                    </div>
+                  </div>
+                </div>
+              <div class="row">
+                <div class="col-md-12">
+
+                  <div class="card">
+                    <div class="card-header">Interaction Monitor</div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-6">
+                              <div class="c-callout c-callout-info"><small class="text-muted">Account Managers</small>
+                                <div class="text-value-lg">9,123</div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                            <div class="col-6">
+                              <div class="c-callout c-callout-danger"><small class="text-muted">MSLs</small>
+                                <div class="text-value-lg">22,643</div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                          </div>
+                          <!-- /.row-->
+                          <hr class="mt-0">
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Monday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 34%" aria-valuenow="34" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 78%" aria-valuenow="78" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Tuesday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 94%" aria-valuenow="94" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Wednesday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 12%" aria-valuenow="12" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 67%" aria-valuenow="67" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Thursday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 91%" aria-valuenow="91" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Friday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 73%" aria-valuenow="73" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Saturday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 53%" aria-valuenow="53" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-4">
+                            <div class="progress-group-prepend"><span class="progress-group-text">Sunday</span></div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 9%" aria-valuenow="9" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 69%" aria-valuenow="69" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col-->
+                        <div class="col-sm-6">
+                          <div class="row">
+                            <div class="col-6">
+                              <div class="c-callout c-callout-warning"><small class="text-muted">HCPs</small>
+                                <div class="text-value-lg">78,623</div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                            <div class="col-6">
+                              <div class="c-callout c-callout-success"><small class="text-muted">Patients</small>
+                                <div class="text-value-lg">49,123</div>
+                              </div>
+                            </div>
+                            <!-- /.col-->
+                          </div>
+                          <!-- /.row-->
+                          <hr class="mt-0">
+                          <div class="progress-group">
+                            <div class="progress-group-header">
+                              <svg class="c-icon progress-group-icon">
+                                <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-user"></use>
+                              </svg>
+                              <div>KOL</div>
+                              <div class="ml-auto font-weight-bold">43%</div>
+                            </div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group mb-5">
+                            <div class="progress-group-header">
+                              <svg class="c-icon progress-group-icon">
+                                <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-user-female"></use>
+                              </svg>
+                              <div>non-KOL</div>
+                              <div class="ml-auto font-weight-bold">37%</div>
+                            </div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group">
+                            <div class="progress-group-header align-items-end">
+                              <svg class="c-icon progress-group-icon">
+                                <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-globe-alt"></use>
+                              </svg>
+                              <div>Company Portal</div>
+                              <div class="ml-auto font-weight-bold mr-2">191.235</div>
+                              <div class="text-muted small">(56%)</div>
+                            </div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 56%" aria-valuenow="56" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group">
+                            <div class="progress-group-header align-items-end">
+                              <svg class="c-icon progress-group-icon">
+                                <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-facebook"></use>
+                              </svg>
+                              <div>Facebook</div>
+                              <div class="ml-auto font-weight-bold mr-2">51.223</div>
+                              <div class="text-muted small">(15%)</div>
+                            </div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group">
+                            <div class="progress-group-header align-items-end">
+                              <svg class="c-icon progress-group-icon">
+                                <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-twitter"></use>
+                              </svg>
+                              <div>Twitter</div>
+                              <div class="ml-auto font-weight-bold mr-2">37.564</div>
+                              <div class="text-muted small">(11%)</div>
+                            </div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 11%" aria-valuenow="11" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="progress-group">
+                            <div class="progress-group-header align-items-end">
+                              <svg class="c-icon progress-group-icon">
+                                <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-linkedin"></use>
+                              </svg>
+                              <div>LinkedIn</div>
+                              <div class="ml-auto font-weight-bold mr-2">27.319</div>
+                              <div class="text-muted small">(8%)</div>
+                            </div>
+                            <div class="progress-group-bars">
+                              <div class="progress progress-xs">
+                                <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 8%" aria-valuenow="8" aria-valuemin="0" aria-valuemax="100"></div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <!-- /.col-->
+                      </div>
+                      <!-- /.row--><br>
+                      <!--<table class="table table-responsive-sm table-hover table-outline mb-0">-->
+                        <!--<thead class="thead-light">-->
+                          <!--<tr>-->
+                            <!--<th class="text-center">-->
+                              <!--<svg class="c-icon">-->
+                                <!--<use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs'%}#cui-people"></use>-->
+                              <!--</svg>-->
+                            <!--</th>-->
+                            <!--<th>Customer</th>-->
+                            <!--<th class="text-center">Affiliation</th>-->
+                            <!--<th>Actioned Insights</th>-->
+                            <!--<th class="text-center">Classification</th>-->
+                            <!--<th>Interactions</th>-->
+                          <!--</tr>-->
+                        <!--</thead>-->
+                        <!--<tbody>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center">-->
+                              <!--<div class="c-avatar"><img class="c-avatar-img" src="{% static 'assets/img/avatars/1.jpg' %}" alt="user@email.com"><span class="c-avatar-status bg-success"></span></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div>Yiorgos Avraamu</div>-->
+                              <!--<div class="small text-muted"><span>New</span> | Registered: Jan 1, 2015</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center"><i class="flag-icon flag-icon-us c-icon-xl" id="us" title="us"></i></td>-->
+                            <!--<td>-->
+                              <!--<div class="clearfix">-->
+                                <!--<div class="float-left"><strong>50%</strong></div>-->
+                                <!--<div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div>-->
+                              <!--</div>-->
+                              <!--<div class="progress progress-xs">-->
+                                <!--<div class="progress-bar bg-gradient-success" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>-->
+                              <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center">-->
+                              <!--<svg class="c-icon c-icon-xl">-->
+                                <!--<use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs'%}#cc-mastercard"></use>-->
+                              <!--</svg>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div class="small text-muted">Last contacted</div><strong>10 sec ago</strong>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center">-->
+                              <!--<div class="c-avatar"><img class="c-avatar-img" src="{% static 'assets/img/avatars/2.jpg' %}" alt="user@email.com"><span class="c-avatar-status bg-danger"></span></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div>Avram Tarasios</div>-->
+                              <!--<div class="small text-muted"><span>Recurring</span> | Registered: Jan 1, 2015</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center"><i class="flag-icon flag-icon-br c-icon-xl" id="br" title="br"></i></td>-->
+                            <!--<td>-->
+                              <!--<div class="clearfix">-->
+                                <!--<div class="float-left"><strong>10%</strong></div>-->
+                                <!--<div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div>-->
+                              <!--</div>-->
+                              <!--<div class="progress progress-xs">-->
+                                <!--<div class="progress-bar bg-gradient-info" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>-->
+                              <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center">-->
+                              <!--<svg class="c-icon c-icon-xl">-->
+                                <!--<use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs'%}#cc-visa"></use>-->
+                              <!--</svg>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div class="small text-muted">Last contacted</div><strong>5 minutes ago</strong>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center">-->
+                              <!--<div class="c-avatar"><img class="c-avatar-img" src="{% static 'assets/img/avatars/3.jpg'%}" alt="user@email.com"><span class="c-avatar-status bg-warning"></span></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div>Quintin Ed</div>-->
+                              <!--<div class="small text-muted"><span>New</span> | Registered: Jan 1, 2015</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center"><i class="flag-icon flag-icon-in c-icon-xl" id="in" title="in"></i></td>-->
+                            <!--<td>-->
+                              <!--<div class="clearfix">-->
+                                <!--<div class="float-left"><strong>74%</strong></div>-->
+                                <!--<div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div>-->
+                              <!--</div>-->
+                              <!--<div class="progress progress-xs">-->
+                                <!--<div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 74%" aria-valuenow="74" aria-valuemin="0" aria-valuemax="100"></div>-->
+                              <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center">-->
+                              <!--<svg class="c-icon c-icon-xl">-->
+                                <!--<use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs'%}#cc-stripe"></use>-->
+                              <!--</svg>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div class="small text-muted">Last contacted</div><strong>1 hour ago</strong>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center">-->
+                              <!--<div class="c-avatar"><img class="c-avatar-img" src="{% static 'assets/img/avatars/4.jpg' %}" alt="user@email.com"><span class="c-avatar-status bg-secondary"></span></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div>Enéas Kwadwo</div>-->
+                              <!--<div class="small text-muted"><span>New</span> | Registered: Jan 1, 2015</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center"><i class="flag-icon flag-icon-fr c-icon-xl" id="fr" title="fr"></i></td>-->
+                            <!--<td>-->
+                              <!--<div class="clearfix">-->
+                                <!--<div class="float-left"><strong>98%</strong></div>-->
+                                <!--<div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div>-->
+                              <!--</div>-->
+                              <!--<div class="progress progress-xs">-->
+                                <!--<div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 98%" aria-valuenow="98" aria-valuemin="0" aria-valuemax="100"></div>-->
+                              <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center">-->
+                              <!--<svg class="c-icon c-icon-xl">-->
+                                <!--<use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs'%}#cc-paypal"></use>-->
+                              <!--</svg>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div class="small text-muted">Last contacted</div><strong>Last month</strong>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center">-->
+                              <!--<div class="c-avatar"><img class="c-avatar-img" src="{% static 'assets/img/avatars/5.jpg' %}" alt="user@email.com"><span class="c-avatar-status bg-success"></span></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div>Agapetus Tadeáš</div>-->
+                              <!--<div class="small text-muted"><span>New</span> | Registered: Jan 1, 2015</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center"><i class="flag-icon flag-icon-es c-icon-xl" id="es" title="es"></i></td>-->
+                            <!--<td>-->
+                              <!--<div class="clearfix">-->
+                                <!--<div class="float-left"><strong>22%</strong></div>-->
+                                <!--<div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div>-->
+                              <!--</div>-->
+                              <!--<div class="progress progress-xs">-->
+                                <!--<div class="progress-bar bg-gradient-info" role="progressbar" style="width: 22%" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>-->
+                              <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center">-->
+                              <!--<svg class="c-icon c-icon-xl">-->
+                                <!--<use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs'%}#cc-apple-pay"></use>-->
+                              <!--</svg>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div class="small text-muted">Last contacted</div><strong>Last week</strong>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                          <!--<tr>-->
+                            <!--<td class="text-center">-->
+                              <!--<div class="c-avatar"><img class="c-avatar-img" src="{% static 'assets/img/avatars/6.jpg' %}" alt="user@email.com"><span class="c-avatar-status bg-danger"></span></div>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div>Friderik Dávid</div>-->
+                              <!--<div class="small text-muted"><span>New</span> | Registered: Jan 1, 2015</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center"><i class="flag-icon flag-icon-pl c-icon-xl" id="pl" title="pl"></i></td>-->
+                            <!--<td>-->
+                              <!--<div class="clearfix">-->
+                                <!--<div class="float-left"><strong>43%</strong></div>-->
+                                <!--<div class="float-right"><small class="text-muted">Jun 11, 2015 - Jul 10, 2015</small></div>-->
+                              <!--</div>-->
+                              <!--<div class="progress progress-xs">-->
+                                <!--<div class="progress-bar bg-gradient-success" role="progressbar" style="width: 43%" aria-valuenow="43" aria-valuemin="0" aria-valuemax="100"></div>-->
+                              <!--</div>-->
+                            <!--</td>-->
+                            <!--<td class="text-center">-->
+                              <!--<svg class="c-icon c-icon-xl">-->
+                                <!--<use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs'%}#cc-amex"></use>-->
+                              <!--</svg>-->
+                            <!--</td>-->
+                            <!--<td>-->
+                              <!--<div class="small text-muted">Last contacted</div><strong>Yesterday</strong>-->
+                            <!--</td>-->
+                          <!--</tr>-->
+                        <!--</tbody>-->
+                      <!--</table>-->
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+              <div class="card-columns cols-2">
+                <div class="card">
+                  <div class="card-header">Line Chart
+                    <div class="card-header-actions"><a class="card-header-action" href="http://www.chartjs.org" target="_blank"><small class="text-muted">docs</small></a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="c-chart-wrapper">
+                      <canvas id="canvas-1"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">Bar Chart
+                    <div class="card-header-actions"><a class="card-header-action" href="http://www.chartjs.org" target="_blank"><small class="text-muted">docs</small></a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="c-chart-wrapper">
+                      <canvas id="canvas-2"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">Doughnut Chart
+                    <div class="card-header-actions"><a class="card-header-action" href="http://www.chartjs.org" target="_blank"><small class="text-muted">docs</small></a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="c-chart-wrapper">
+                      <canvas id="canvas-3"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">Radar Chart
+                    <div class="card-header-actions"><a class="card-header-action" href="http://www.chartjs.org" target="_blank"><small class="text-muted">docs</small></a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="c-chart-wrapper">
+                      <canvas id="canvas-4"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">Pie Chart
+                    <div class="card-header-actions"><a class="card-header-action" href="http://www.chartjs.org" target="_blank"><small class="text-muted">docs</small></a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="c-chart-wrapper">
+                      <canvas id="canvas-5"></canvas>
+                    </div>
+                  </div>
+                </div>
+                <div class="card">
+                  <div class="card-header">Polar Area Chart
+                    <div class="card-header-actions"><a class="card-header-action" href="http://www.chartjs.org" target="_blank"><small class="text-muted">docs</small></a></div>
+                  </div>
+                  <div class="card-body">
+                    <div class="c-chart-wrapper">
+                      <canvas id="canvas-6"></canvas>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  <!-- /.card-->
+
+                <!-- /.card-->
+
+
+
+
+
+{% endblock %}
+
+{% block extra-scripts %}
+
+
+<script src="https://d3js.org/d3.v3.min.js"></script>
+<script src="{% static 'js/charts.js'%}"></script>
+<script src="https://d3js.org/topojson.v1.min.js"></script>
+<script>
+    <!--these need to be replaced with API calls so that it is decoupled from UI as will need to pass canvasID calls-->
+    var us_map_locale_zoomable = "{% static 'us2.json' %}"
+    var us_map_locale = "{% static 'us.json' %}"
+    var cnty = "{% static 'counties.json' %}"
+    var zs = "{% static 'zips_us_topo.json' %}"
+</script>
+<style>
+
+  .zip {
+    fill: none;
+    stroke: #CCC;
+    stroke-width: .5px;
+  }
+
+
+.county {
+  fill: none;
+  stroke: #000;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke-width: .5px;
+}
+
+.land {
+  fill: #ddd;
+}
+
+.borderfoo {
+  fill: none;
+  stroke: #000;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+</style>
+<style>
+
+.background {
+  fill: none;
+  pointer-events: all;
+}
+
+#states {
+  fill: #aaa;
+}
+
+#states .active {
+  fill: orange;
+}
+
+#state-borders {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+</style>
+<script>
+
+var width = 960,
+    height = 500,
+    centered;
+
+var projection = d3.geo.albersUsa()
+    .scale(1070)
+    .translate([width / 2, height / 2]);
+
+var path = d3.geo.path()
+    .projection(projection);
+
+var svg = d3.select("#canvasX").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+
+svg.append("rect")
+    .attr("class", "background")
+    .attr("width", width)
+    .attr("height", height)
+    .on("click", clicked);
+
+var g = svg.append("g");
+
+d3.json(us_map_locale_zoomable, function(error, us) {
+  if (error) throw error;
+
+  g.append("g")
+      .attr("id", "states")
+    .selectAll("path")
+      .data(topojson.feature(us, us.objects.states).features)
+    .enter().append("path")
+      .attr("d", path)
+      .on("click", clicked);
+
+  g.append("path")
+      .datum(topojson.mesh(us, us.objects.states, function(a, b) { return a !== b; }))
+      .attr("id", "state-borders")
+      .attr("d", path);
+});
+
+function clicked(d) {
+  var x, y, k;
+
+  if (d && centered !== d) {
+    var centroid = path.centroid(d);
+    x = centroid[0];
+    y = centroid[1];
+    k = 4;
+    centered = d;
+  } else {
+    x = width / 2;
+    y = height / 2;
+    k = 1;
+    centered = null;
+  }
+
+  g.selectAll("path")
+      .classed("active", centered && function(d) { return d === centered; });
+
+  g.transition()
+      .duration(750)
+      .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")scale(" + k + ")translate(" + -x + "," + -y + ")")
+      .style("stroke-width", 1.5 / k + "px");
+}
+
+</script>
+
+<script src="{% static 'js/grasp_counties.js'%}"></script>
+<script src="https://d3js.org/queue.v1.min.js"></script>
+<script src="{% static 'js/grasp_zipcodes.js'%}"></script>
+{% endblock %}

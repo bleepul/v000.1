@@ -1,0 +1,167 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra-head %}
+{% endblock %}
+
+{% block breadcrumbs %}
+ <li class="breadcrumb-item active">Insights</li>
+<li class="breadcrumb-item active">Trending</li>
+{% endblock %}
+
+{% block cards %}
+
+ <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-5">
+                      <h4 class="card-title mb-0">Twitter Mentions</h4>
+                      <div class="small text-muted">September 2019</div>
+                    </div>
+                    <!-- /.col-->
+                    <div class="col-sm-7 d-none d-md-block">
+                      <button class="btn btn-primary float-right" type="button">
+                        <svg class="c-icon">
+                          <use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-cloud-download"></use>
+                        </svg>
+                      </button>
+                      <div class="btn-group btn-group-toggle float-right mr-3" data-toggle="buttons">
+                        <label class="btn btn-outline-secondary">
+                          <input id="option1" type="radio" name="options" autocomplete="off"> Day
+                        </label>
+                        <label class="btn btn-outline-secondary active">
+                          <input id="option2" type="radio" name="options" autocomplete="off" checked=""> Month
+                        </label>
+                        <label class="btn btn-outline-secondary">
+                          <input id="option3" type="radio" name="options" autocomplete="off"> Year
+                        </label>
+                      </div>
+                    </div>
+                    <!-- /.col-->
+                  </div>
+                  <!-- /.row-->
+                  <div class="c-chart-wrapper" style="height:300px;margin-top:40px;">
+                    <canvas class="chart" id="main-chart" height="300"></canvas>
+                  </div>
+                </div>
+
+                <div class="card-footer">
+                  <div class="row text-center">
+                    <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="text-muted">#RYPEHEALTH</div><strong></strong>
+                      <div class="progress progress-xs mt-2">
+                        <div class="progress-bar bg-gradient-success" role="progressbar" style="width: 100%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="text-muted">#Genentech</div><strong></strong>
+                      <div class="progress progress-xs mt-2">
+                        <div class="progress-bar bg-gradient-info" role="progressbar" style="width: 100%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="text-muted">#Herceptin</div><strong></strong>
+                      <div class="progress progress-xs mt-2">
+                        <div class="progress-bar bg-gradient-warning" role="progressbar" style="width: 100%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="text-muted">#Tarceva</div><strong></strong>
+                      <div class="progress progress-xs mt-2">
+                        <div class="progress-bar bg-gradient-danger" role="progressbar" style="width: 100%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                    <div class="col-sm-12 col-md mb-sm-2 mb-0">
+                      <div class="text-muted">#Avastin</div><strong></strong>
+                      <div class="progress progress-xs mt-2">
+                        <div class="progress-bar" role="progressbar" style="width: 100%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+                </div></div>
+
+  <div class="row">
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header bg-facebook content-center">
+                      <svg class="c-icon c-icon-3xl text-white my-4">
+                        <use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs.svg'%}#facebook-f"></use>
+                      </svg>
+                      <div class="c-chart-wrapper">
+                        <canvas id="social-box-chart-1" height="90"></canvas>
+                      </div>
+                    </div>
+                    <div class="card-body row text-center">
+                      <div class="col">
+                        <div class="text-value-xl">89k</div>
+                        <div class="text-uppercase text-muted small">friends</div>
+                      </div>
+                      <div class="c-vr"></div>
+                      <div class="col">
+                        <div class="text-value-xl">459</div>
+                        <div class="text-uppercase text-muted small">feeds</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header bg-twitter content-center">
+                      <svg class="c-icon c-icon-3xl text-white my-4">
+                        <use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs.svg'%}#twitter"></use>
+                      </svg>
+                      <div class="c-chart-wrapper">
+                        <canvas id="social-box-chart-2" height="90"></canvas>
+                      </div>
+                    </div>
+                    <div class="card-body row text-center">
+                      <div class="col">
+                        <div class="text-value-xl">973k</div>
+                        <div class="text-uppercase text-muted small">followers</div>
+                      </div>
+                      <div class="c-vr"></div>
+                      <div class="col">
+                        <div class="text-value-xl">1.792</div>
+                        <div class="text-uppercase text-muted small">tweets</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-lg-4">
+                  <div class="card">
+                    <div class="card-header bg-linkedin content-center">
+                      <svg class="c-icon c-icon-3xl text-white my-4">
+                        <use xlink:href="{% static 'assets/icons/brands/brands-symbol-defs.svg'%}#linkedin"></use>
+                      </svg>
+                      <div class="c-chart-wrapper">
+                        <canvas id="social-box-chart-3" height="90"></canvas>
+                      </div>
+                    </div>
+                    <div class="card-body row text-center">
+                      <div class="col">
+                        <div class="text-value-xl">500+</div>
+                        <div class="text-uppercase text-muted small">contacts</div>
+                      </div>
+                      <div class="c-vr"></div>
+                      <div class="col">
+                        <div class="text-value-xl">292</div>
+                        <div class="text-uppercase text-muted small">feeds</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+
+
+
+{% endblock %}
+
+{% block extra-scripts %}
+{% endblock %}

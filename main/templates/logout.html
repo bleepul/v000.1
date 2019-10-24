@@ -1,0 +1,57 @@
+{% load static %}
+<html lang="en">
+  <head>
+    <base href="./">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>RypeInsights Login</title>
+    <!-- Icons-->
+    <link href="{% static 'vendors/flag-icon-css/css/flag-icon.min.css' %}" rel="stylesheet">
+    <!-- Main styles for this application-->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'vendors/pace-progress/css/pace.min.css' %}" rel="stylesheet">
+  </head>
+  <body class="c-app flex-row align-items-center">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="card-group">
+            <div class="card p-4">
+              <div class="card-body">
+                <h1>You are now logged out.</h1>
+                <p></p>
+                <!--<div class="input-group mb-3">-->
+                  <!--<div class="input-group-prepend"><span class="input-group-text">-->
+                      <!--<svg class="c-icon">-->
+                        <!--<use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-user"></use>-->
+                      <!--</svg></span></div>-->
+                  <!--<input class="form-control" type="text" placeholder="Username" name="username" id="id_username">-->
+                <!--</div>-->
+                <!--<div class="input-group mb-4">-->
+                  <!--<div class="input-group-prepend"><span class="input-group-text">-->
+                      <!--<svg class="c-icon">-->
+                        <!--<use xlink:href="{% static 'assets/icons/coreui/free-symbol-defs.svg'%}#cui-lock-locked"></use>-->
+                      <!--</svg></span></div>-->
+                  <!--<input class="form-control" type="password" placeholder="Password" name="password" id="id_password">-->
+                <!--</div>-->
+                <div class="row">
+                  <div class="col-6"><a class="btn btn-primary" href="{% url 'login' %}">
+                    <button class="btn btn-primary px-4" type="button">Login</button></a>
+                  </div>
+                </div>
+                <!--<div class="col-6 text-right" href="{% url 'login' %}>-->
+                    <!--<button class="btn btn-link px-0" type="button" >Login</button>-->
+                <!--</div>-->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- CoreUI and necessary plugins-->
+    <script src="{% static 'vendors/pace-progress/js/pace.min.js' %}"></script>
+    <script src="{% static 'vendors/@coreui/coreui-pro/js/coreui.bundle.min.js' %}"></script>
+
+  </body>
+</html>

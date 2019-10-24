@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra-head %}
+ <link href="{% static 'vendors/datatables.net-bs4/css/dataTables.bootstrap4.css'%}" rel="stylesheet">
+{% endblock %}
+
+{% block breadcrumbs %}
+<li class="breadcrumb-item active">Insights</li>
+<li class="breadcrumb-item active">Topic Area</li>
+<li class="breadcrumb-item active"></li>
+{% endblock %}
+
+{% block cards %}
+
+<div class="row">
+                <div class="col-sm-6 col-md-4">
+                  <div class="card text-white bg-primary">
+                    <div class="card-header">Card title</div>
+                    <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-md-4">
+                  <div class="card text-white bg-success">
+                    <div class="card-header">Card title</div>
+                    <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-md-4">
+                  <div class="card text-white bg-info">
+                    <div class="card-header">Card title</div>
+                    <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-md-4">
+                  <div class="card text-white bg-warning">
+                    <div class="card-header">Card title</div>
+                    <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-md-4">
+                  <div class="card text-white bg-danger">
+                    <div class="card-header">Card title</div>
+                    <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+                  </div>
+                </div>
+                <!-- /.col-->
+                <div class="col-sm-6 col-md-4">
+                  <div class="card">
+                    <div class="card-header">Card actions
+                      <div class="card-header-actions"><a class="card-header-action btn-setting" href="#">
+                          <svg class="c-icon">
+                            <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-settings"></use>
+                          </svg></a><a class="card-header-action btn-minimize" href="#" data-toggle="collapse" data-target="#collapseExample" aria-expanded="true">
+                          <svg class="c-icon">
+                            <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-arrow-circle-top"></use>
+                          </svg></a><a class="card-header-action btn-close" href="#">
+                          <svg class="c-icon">
+                            <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-x-circle"></use>
+                          </svg></a></div>
+                    </div>
+                    <div class="collapse show" id="collapseExample">
+                      <div class="card-body">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.</div>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.col-->
+              </div>
+
+
+{% endblock %}
+
+{% block extra-scripts %}
+
+    <script src="{% static 'vendors/jquery/js/jquery.slim.min.js'%}"></script>
+    <script src="{% static 'vendors/datatables.net/js/jquery.dataTables.js'%}"></script>
+    <script src="{% static 'vendors/datatables.net-bs4/js/dataTables.bootstrap4.min.js'%}"></script>
+    <script src="{% static 'js/datatables.js'%}"></script>
+{% endblock %}
